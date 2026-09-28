@@ -1,0 +1,1118 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+    .mcc-course {
+        --n: #1C2F53;
+        --t: #0095BC;
+        --o: #ED6E13;
+        --i: #EDF7FF;
+        --k: #1A1A1A;
+        --m: #55606E;
+        --l: #DCE6EC;
+        font-family: Poppins, Arial, sans-serif;
+        color: var(--k);
+        line-height: 1.65;
+        font-size: 16px
+    }
+
+    .mcc-course *,
+    .mcc-course *::before,
+    .mcc-course *::after {
+        box-sizing: border-box
+    }
+
+    .mcc-course a {
+        color: var(--o);
+        text-decoration: underline;
+        text-underline-offset: 3px
+    }
+
+    .mcc-course a:hover {
+        color: var(--t)
+    }
+
+    .mcc-course a:focus-visible,
+    .mcc-course .mcc-btn:focus-visible {
+        outline: 3px solid var(--o);
+        outline-offset: 3px
+    }
+
+    .mcc-crumbs {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        font-size: 13px;
+        color: var(--m);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px
+    }
+
+    .mcc-crumbs a {
+        color: var(--n) !important;
+        text-decoration: none !important
+    }
+
+    .mcc-crumbs a:hover {
+        color: var(--o) !important
+    }
+
+    .mcc-hero {
+        background: var(--n);
+        color: #fff
+    }
+
+    .mcc-hero-in {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 56px 20px 60px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+        gap: 56px;
+        align-items: center
+    }
+
+    .mcc-code {
+        margin: 0 0 14px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #9FD6E6
+    }
+
+    .mcc-hero h1 {
+        margin: 0 0 18px;
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: -.01em;
+        max-width: 20ch
+    }
+
+    .mcc-lead {
+        margin: 0 0 26px;
+        font-size: 17px;
+        line-height: 1.7;
+        color: #E3EEF5;
+        max-width: 60ch
+    }
+
+    .mcc-acts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 30px
+    }
+
+    .mcc-course .mcc-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 11px 22px;
+        border: 2px solid var(--o);
+        border-radius: 8px;
+        background: var(--o);
+        color: #fff;
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none
+    }
+
+    .mcc-course .mcc-btn:hover {
+        background: #CF5708;
+        border-color: #CF5708;
+        color: #fff
+    }
+
+    .mcc-course .mcc-ghost {
+        background: transparent;
+        border-color: #6BC7DD;
+        color: #fff
+    }
+
+    .mcc-course .mcc-ghost:hover {
+        background: #fff;
+        border-color: #fff;
+        color: var(--n)
+    }
+
+    .mcc-facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin: 0;
+        border-top: 1px solid rgba(255, 255, 255, .22)
+    }
+
+    .mcc-facts div {
+        padding: 14px 14px 0 0
+    }
+
+    .mcc-facts dt {
+        font-size: 12px;
+        color: #9FD6E6
+    }
+
+    .mcc-facts dd {
+        margin: 2px 0 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4
+    }
+
+    .mcc-stack {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        display: block;
+        margin: 0 auto
+    }
+
+    .mcc-body {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 56px;
+        align-items: start
+    }
+
+    .mcc-main {
+        min-width: 0;
+        max-width: 860px
+    }
+
+    .mcc-qa {
+        background: #1C2F53;
+        border: 1.5px solid #0095BC;
+        border-radius: 12px;
+        padding: 28px 36px;
+        max-width: 860px;
+        margin: 0 0 44px;
+        font-family: Poppins, sans-serif
+    }
+
+    .mcc-qa h2 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.2
+    }
+
+    .mcc-qa p {
+        margin: 0;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.5
+    }
+
+    .mcc-sec {
+        margin: 0 0 44px
+    }
+
+    .mcc-sec h2 {
+        margin: 0 0 12px;
+        color: var(--n);
+        font-size: clamp(23px, 2.6vw, 29px);
+        line-height: 1.25;
+        font-weight: 600
+    }
+
+    .mcc-sec>p {
+        margin: 0 0 16px;
+        max-width: 68ch
+    }
+
+    .mcc-kts {
+        margin: 0;
+        padding: 0 0 0 22px
+    }
+
+    .mcc-kts li {
+        margin: 0 0 8px;
+        padding-left: 4px
+    }
+
+    .mcc-kts li::marker {
+        color: var(--t)
+    }
+
+    .mcc-outs {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 12px
+    }
+
+    .mcc-outs li {
+        padding: 16px 20px;
+        background: var(--i);
+        border-left: 4px solid var(--t);
+        border-radius: 0 8px 8px 0
+    }
+
+    .mcc-outs strong {
+        color: var(--n)
+    }
+
+    .mcc-agenda {
+        list-style: none;
+        counter-reset: a;
+        margin: 18px 0 0;
+        padding: 0
+    }
+
+    .mcc-agenda li {
+        counter-increment: a;
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 12px;
+        align-items: baseline;
+        padding: 12px 0;
+        border-top: 1px solid var(--l)
+    }
+
+    .mcc-agenda li:last-child {
+        border-bottom: 1px solid var(--l)
+    }
+
+    .mcc-agenda li::before {
+        content: counter(a);
+        font-weight: 700;
+        color: var(--t);
+        font-size: 18px
+    }
+
+    .mcc-tw {
+        overflow-x: auto
+    }
+
+    .mcc-tb {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Poppins, sans-serif;
+        font-size: 15px
+    }
+
+    .mcc-tb thead th {
+        background: #0095BC;
+        color: #fff;
+        font-weight: 700;
+        padding: 8px 14px;
+        text-align: left;
+        border: 1px solid #0095BC
+    }
+
+    .mcc-tb tbody th {
+        background: #EDF7FF;
+        font-weight: 600;
+        text-align: left;
+        white-space: nowrap
+    }
+
+    .mcc-tb tbody th,
+    .mcc-tb td {
+        padding: 7px 14px;
+        line-height: 1.6;
+        border: 1px solid #e2e2e2;
+        vertical-align: top
+    }
+
+    .mcc-tb td {
+        background: #fff
+    }
+
+    .mcc-tb tbody tr:hover td {
+        background: #F7FBFE
+    }
+
+    .mcc-chips {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px
+    }
+
+    .mcc-chips li {
+        padding: 8px 14px;
+        border: 1px solid #BFDDEA;
+        border-radius: 999px;
+        font-size: 14px;
+        color: var(--n);
+        background: #fff
+    }
+
+    .mcc-path {
+        list-style: none;
+        margin: 18px 0 12px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 10px
+    }
+
+    .mcc-path a,
+    .mcc-path .mcc-here {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 14px;
+        border: 1px solid var(--l);
+        border-radius: 8px;
+        text-decoration: none !important;
+        color: var(--n) !important;
+        background: #fff
+    }
+
+    .mcc-path a:hover {
+        border-color: var(--t);
+        background: var(--i)
+    }
+
+    .mcc-path b {
+        font-size: 20px;
+        color: var(--t)
+    }
+
+    .mcc-path span {
+        font-size: 13px;
+        line-height: 1.4
+    }
+
+    .mcc-path .mcc-here {
+        background: var(--n);
+        border-color: var(--n);
+        color: #fff !important
+    }
+
+    .mcc-here b {
+        color: #9FD6E6
+    }
+
+    .mcc-small {
+        font-size: 13px;
+        color: var(--m)
+    }
+
+    .mcc-quote {
+        margin: 22px 0 0;
+        background: #EDF7FF;
+        border: 2px solid #0095BC;
+        border-radius: 12px;
+        padding: 24px 32px;
+        max-width: 860px;
+        font-family: Poppins, sans-serif;
+        font-style: italic
+    }
+
+    .mcc-quote blockquote {
+        margin: 0
+    }
+
+    .mcc-quote p {
+        margin: 0 0 20px;
+        font-size: 16px;
+        line-height: 1.75;
+        color: #1A1A1A
+    }
+
+    .mcc-quote figcaption {
+        font-size: 14px;
+        color: var(--n);
+        font-weight: 500
+    }
+
+    .mcc-faqs {
+        border-top: 1px solid var(--l)
+    }
+
+    .mcc-fq {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--l)
+    }
+
+    .mcc-fq h3 {
+        margin: 0 0 6px;
+        font-size: 17px;
+        color: var(--n);
+        font-weight: 600
+    }
+
+    .mcc-fq p {
+        margin: 0;
+        max-width: 68ch
+    }
+
+    .mcc-buy {
+        position: sticky;
+        top: 110px;
+        padding: 24px;
+        border: 1px solid var(--l);
+        border-top: 4px solid var(--o);
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 14px 40px rgba(28, 47, 83, .12)
+    }
+
+    .mcc-buy-t {
+        margin: 0;
+        font-weight: 600;
+        color: var(--n);
+        font-size: 17px
+    }
+
+    .mcc-buy-p {
+        margin: 4px 0 18px;
+        color: var(--m);
+        font-size: 14px
+    }
+
+    .mcc-course .mcc-wide {
+        width: 100%
+    }
+
+    .mcc-buy-n {
+        margin: 8px 0 0;
+        font-size: 12px;
+        color: var(--m);
+        text-align: center
+    }
+
+    .mcc-inc {
+        list-style: none;
+        margin: 18px 0 0;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--l)
+    }
+
+    .mcc-inc li {
+        position: relative;
+        padding: 0 0 9px 24px;
+        font-size: 14px
+    }
+
+    .mcc-inc li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 7px;
+        width: 10px;
+        height: 6px;
+        border-left: 2px solid var(--t);
+        border-bottom: 2px solid var(--t);
+        transform: rotate(-45deg)
+    }
+
+    .mcc-buy-r {
+        margin: 10px 0 0;
+        padding: 12px 14px;
+        background: var(--i);
+        border-radius: 8px;
+        font-size: 13px;
+        line-height: 1.55
+    }
+
+    /* Instructor card: repeat the mcc-card inside a Webflow Collection List with class mcc-cards. */
+    .mcc-team {
+        background: #EDF7FF;
+        border-bottom: 1px solid #C9E3EF
+    }
+
+    .mcc-team-in {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 48px 20px
+    }
+
+    .mcc-team-intro {
+        max-width: 760px;
+        margin-bottom: 24px
+    }
+
+    .mcc-team-intro h2 {
+        margin: 0 0 10px;
+        color: var(--n);
+        font-size: clamp(23px, 2.6vw, 29px);
+        line-height: 1.25;
+        font-weight: 600
+    }
+
+    .mcc-team-intro p {
+        margin: 0;
+        max-width: 65ch;
+        color: var(--m)
+    }
+
+    .mcc-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        gap: 20px;
+        align-items: stretch
+    }
+
+    .mcc-card {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        height: 100%;
+        background: #fff;
+        border: 1px solid #C9E3EF;
+        border-radius: 12px;
+        padding: 24px 26px;
+        box-shadow: 0 10px 30px rgba(28, 47, 83, .08)
+    }
+
+    .mcc-card-top {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 16px
+    }
+
+    .mcc-ph {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+        background: var(--n);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--t);
+        flex: none
+    }
+
+    .mcc-role {
+        margin: 0 0 4px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: #B94F07
+    }
+
+    .mcc-card h3 {
+        margin: 0;
+        font-size: 21px;
+        line-height: 1.25;
+        color: var(--n);
+        font-weight: 700
+    }
+
+    .mcc-title {
+        margin: 3px 0 0;
+        font-size: 14px;
+        color: var(--m);
+        line-height: 1.45
+    }
+
+    .mcc-instructor-bio {
+        margin: 0 0 14px;
+        font-size: 14px;
+        line-height: 1.65
+    }
+
+    .mcc-cred {
+        list-style: none;
+        margin: 0;
+        padding: 14px 0 0;
+        border-top: 1px solid var(--l);
+        display: grid;
+        gap: 6px
+    }
+
+    .mcc-cred li {
+        position: relative;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 1.5
+    }
+
+    .mcc-cred li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 8px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--t)
+    }
+
+    .mcc-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        margin: auto 0 0;
+        padding-top: 18px;
+        font-size: 14px;
+        font-weight: 500
+    }
+
+    .mcc-links:empty {
+        display: none
+    }
+
+    .mcc-team-testimonial {
+        max-width: 860px;
+        margin: 24px 0 0;
+        padding: 22px 28px;
+        background: #fff;
+        border-left: 4px solid var(--o);
+        border-radius: 0 10px 10px 0
+    }
+
+    .mcc-team-testimonial blockquote {
+        margin: 0
+    }
+
+    .mcc-team-testimonial p {
+        margin: 0 0 8px;
+        font-style: italic;
+        font-size: 15px;
+        line-height: 1.7
+    }
+
+    .mcc-team-testimonial figcaption {
+        font-size: 13px;
+        color: var(--m)
+    }
+
+    @media(max-width:600px) {
+        .mcc-team-in {
+            padding: 36px 16px
+        }
+
+        .mcc-card {
+            padding: 20px
+        }
+
+        .mcc-card-top {
+            gap: 14px
+        }
+
+        .mcc-ph {
+            width: 72px;
+            height: 72px
+        }
+
+        .mcc-team-testimonial {
+            padding: 18px 20px
+        }
+    }
+
+    @media(max-width:960px) {
+        .mcc-hero-in {
+            grid-template-columns: 1fr;
+            gap: 36px
+        }
+
+        .mcc-hero-fig {
+            max-width: 380px
+        }
+
+        .mcc-body {
+            grid-template-columns: 1fr
+        }
+
+        .mcc-buy {
+            position: static;
+            order: -1;
+            max-width: 560px
+        }
+
+        .mcc-facts {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+    }
+
+    @media(max-width:600px) {
+        .mcc-hero-in {
+            padding: 40px 16px 44px
+        }
+
+        .mcc-body {
+            padding: 32px 16px 56px
+        }
+
+        .mcc-qa {
+            padding: 24px 22px
+        }
+
+        .mcc-qa h2 {
+            font-size: 24px
+        }
+
+        .mcc-qa p {
+            font-size: 16px
+        }
+
+        .mcc-quote {
+            padding: 20px 22px
+        }
+
+        .mcc-acts {
+            display: grid
+        }
+
+        .mcc-course .mcc-btn {
+            width: 100%
+        }
+
+        .mcc-tb tbody th {
+            white-space: normal
+        }
+
+        .mcc-path {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+        .mcc-course * {
+            transition: none !important
+        }
+    }
+</style>
+<script
+    type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.mcceconomics.co.uk/#org","name":"MCC Economics","url":"https://www.mcceconomics.co.uk/","logo":"https://cdn.prod.website-files.com/659e744774685132739e7387/65cef7b9c10c6c68a84cc156_MCC%20SVG%20Colored.svg","sameAs":["https://www.linkedin.com/company/mcc-economics-ltd/","https://www.eventbrite.co.uk/o/80347300453"]},{"@type":"Person","@id":"https://www.mcceconomics.co.uk/team/pj-mccloskey#person","name":"PJ McCloskey","jobTitle":"Director","worksFor":{"@id":"https://www.mcceconomics.co.uk/#org"},"url":"https://www.mcceconomics.co.uk/team/pj-mccloskey","image":"https://cdn.prod.website-files.com/65a75c243f1b188a0747acff/65ceffa126e52092bc1d6160_PJ.png","sameAs":["https://www.linkedin.com/in/pj-mcceconomics-consultant/"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Birkbeck, University of London"},"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"ACMA, Chartered Institute of Management Accountants"},{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"MSc Finance (Distinction)"}],"knowsAbout":["Price controls","Cost of capital","Financial modelling","Regulatory economics"]},{"@type":"Course","@id":"https://www.mcceconomics.co.uk/courses/price-controls-231-oetc#course","name":"Price Controls 231: OETC price controls","courseCode":"Price Controls 231","url":"https://www.mcceconomics.co.uk/courses/price-controls-231-oetc","inLanguage":"en-GB","description":"A 30-minute on-demand case study of how Oman Electricity Transmission Company's revenue is regulated: Maximum Allowed Revenue building blocks, investment assessment by the Authority for Public Services Regulation, and spinning reserve incentives.","provider":{"@id":"https://www.mcceconomics.co.uk/#org"},"educationalLevel":"Advanced","timeRequired":"PT30M","teaches":["How OETC is regulated under Oman's Sector Law","How Maximum Allowed Revenue is built from operating costs, capital costs and the weighted average cost of capital","How spinning reserve incentives work"],"about":[{"@type":"Organization","name":"Oman Electricity Transmission Company"},{"@type":"Thing","name":"Price control regulation"},{"@type":"Thing","name":"Spinning reserve"}],"audience":{"@type":"Audience","audienceType":"Regulatory professionals, grid operators, economists, engineers and infrastructure consultants"},"creator":{"@id":"https://www.mcceconomics.co.uk/team/pj-mccloskey#person"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"Online","courseWorkload":"PT30M","instructor":{"@id":"https://www.mcceconomics.co.uk/team/pj-mccloskey#person"}},"offers":{"@type":"Offer","category":"Paid","url":"https://www.eventbrite.co.uk/e/price-controls-231-oetc-on-demand-course-material-tickets-1972346252736","availability":"https://schema.org/InStock","seller":{"@id":"https://www.mcceconomics.co.uk/#org"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mcceconomics.co.uk/"},{"@type":"ListItem","position":2,"name":"Courses","item":"https://www.mcceconomics.co.uk/courses"},{"@type":"ListItem","position":3,"name":"Price Controls 231: OETC","item":"https://www.mcceconomics.co.uk/courses/price-controls-231-oetc"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who teaches Price Controls 231?","acceptedAnswer":{"@type":"Answer","text":"See the course instructor profiles on this page for the current teaching team and their experience."}},{"@type":"Question","name":"Is there a live session?","acceptedAnswer":{"@type":"Answer","text":"No. Price Controls 231 is recorded course material, so there is no meeting to attend. You get access to the materials as soon as you register."}},{"@type":"Question","name":"How long does the course take?","acceptedAnswer":{"@type":"Answer","text":"The lecture runs for about 30 minutes. Allow a little longer if you want to work through the slides and the quiz."}},{"@type":"Question","name":"What do I receive when I register?","acceptedAnswer":{"@type":"Answer","text":"A video lecture, the presentation slides, a full transcript and a short quiz to check your understanding."}},{"@type":"Question","name":"Where do I pay?","acceptedAnswer":{"@type":"Answer","text":"Checkout is handled by Eventbrite, where MCC Economics and Finance is the organiser. The button on this page takes you straight to the course listing."}},{"@type":"Question","name":"Can I get a refund?","acceptedAnswer":{"@type":"Answer","text":"No. The Eventbrite listing for this course states a no refunds policy, so check the course outline on this page before you buy."}},{"@type":"Question","name":"Do I need prior knowledge of price controls?","acceptedAnswer":{"@type":"Answer","text":"It helps. Price Controls 231 is an advanced case study. If revenue caps, building blocks or the cost of capital are new to you, take Price Controls 101, 120 and 130 first."}},{"@type":"Question","name":"Can my team take the course together?","acceptedAnswer":{"@type":"Answer","text":"Contact MCC Economics through the consultation page to discuss access for a team or training tailored to your organisation."}}]}]}</script>
+<div class="mcc-course">
+    <nav class="mcc-crumbs" aria-label="Breadcrumb"><a href="https://www.mcceconomics.co.uk/">Home</a><span
+            aria-hidden="true">/</span><a href="https://www.mcceconomics.co.uk/courses">Courses</a><span
+            aria-hidden="true">/</span><span aria-current="page">Price Controls 231</span></nav>
+    <header class="mcc-hero">
+        <div class="mcc-hero-in">
+            <div class="mcc-hero-copy">
+                <p class="mcc-code">Price Controls 231 · On-demand course</p>
+                <h1>OETC price controls: how Oman regulates its electricity transmission revenue</h1>
+                <p class="mcc-lead">A 30-minute recorded case study from MCC Economics. It shows how the revenue of Oman
+                    Electricity Transmission Company (OETC) is set, from the building blocks of Maximum Allowed Revenue
+                    to the incentives on spinning reserve.</p>
+                <div class="mcc-acts"><button id="eb-hero-btn" class="mcc-btn" type="button" style="font-family:inherit;cursor:pointer">Check availability</button><a class="mcc-btn mcc-ghost"
+                        href="#mcc-outline">See the course outline</a></div>
+                <dl class="mcc-facts">
+                    <div>
+                        <dt>Format</dt>
+                        <dd>Recorded, no live session</dd>
+                    </div>
+                    <div>
+                        <dt>Length</dt>
+                        <dd>About 30 minutes</dd>
+                    </div>
+                    <div>
+                        <dt>You receive</dt>
+                        <dd>Video, slides, transcript, quiz</dd>
+                    </div>
+                    <div>
+                        <dt>Level</dt>
+                        <dd>Advanced case study</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="mcc-hero-fig"><svg class="mcc-stack" viewBox="0 0 360 330" role="img"
+                    aria-labelledby="mccStackT mccStackD">
+                    <title id="mccStackT">How OETC's Maximum Allowed Revenue is built</title>
+                    <desc id="mccStackD">Operating costs, capital costs and a return set by the weighted average cost of
+                        capital stack up to Maximum Allowed Revenue, with performance incentives adjusting the total.
+                    </desc>
+                    <g font-family="Poppins,Arial,sans-serif">
+                        <rect x="20" y="226" width="220" height="74" rx="6" fill="#EDF7FF" /><text x="36" y="258"
+                            font-size="14" font-weight="600" fill="#1C2F53">Operating costs</text><text x="36" y="280"
+                            font-size="12" fill="#1C2F53">Opex</text>
+                        <rect x="20" y="146" width="220" height="74" rx="6" fill="#9FD6E6" /><text x="36" y="178"
+                            font-size="14" font-weight="600" fill="#1C2F53">Capital costs</text><text x="36" y="200"
+                            font-size="12" fill="#1C2F53">Capex recovery</text>
+                        <rect x="20" y="76" width="220" height="64" rx="6" fill="#0095BC" /><text x="36" y="104"
+                            font-size="14" font-weight="600" fill="#fff">Return on capital</text><text x="36" y="124"
+                            font-size="12" fill="#fff">Set by the WACC</text>
+                        <rect x="20" y="30" width="220" height="40" rx="6" fill="none" stroke="#ED6E13" stroke-width="2"
+                            stroke-dasharray="5 4" /><text x="36" y="55" font-size="12" font-weight="600"
+                            fill="#fff">Incentives (spinning reserve)</text>
+                        <path d="M254 30 h10 v270 h-10" fill="none" stroke="#fff" stroke-width="1.5" />
+                        <path d="M264 165 h10" stroke="#fff" stroke-width="1.5" />
+                        <text x="280" y="152" font-size="13" font-weight="600" fill="#fff">Maximum</text><text x="280"
+                            y="170" font-size="13" font-weight="600" fill="#fff">Allowed</text><text x="280" y="188"
+                            font-size="13" font-weight="600" fill="#fff">Revenue</text>
+                        <text x="20" y="322" font-size="11" fill="#C9DCE8">Illustrative. Blocks are not drawn to
+                            scale.</text>
+                    </g>
+                </svg></div>
+        </div>
+    </header>
+
+
+    <section class="mcc-team" aria-labelledby="mcc-team-h">
+        <div class="mcc-team-in">
+            <div class="mcc-team-intro">
+                <h2 id="mcc-team-h">Meet your course instructors</h2>
+                <p>Learn from practitioners with direct experience in electricity regulation, price controls and
+                    financial modelling.</p>
+            </div>
+            <!-- WEBFLOW CMS: Replace the example .mcc-cards markup below with a native Collection List. Assign its Collection List wrapper the class mcc-cards, and assign each Collection Item the class mcc-card. Filter linked Instructor items to this course and sort by Display order. Put the elements inside the Collection Item, binding name, role, job title, portrait, short bio, and profile/LinkedIn links to that Instructor. Hide optional links when empty. Webflow does not repeat CMS items within a static HTML Embed. -->
+            <div class="mcc-cards">
+                <article class="mcc-card">
+                    <div class="mcc-card-top"><img class="mcc-ph"
+                            src="https://cdn.prod.website-files.com/65a75c243f1b188a0747acff/65ceffa126e52092bc1d6160_PJ.png"
+                            alt="PJ McCloskey" width="84" height="84" loading="lazy">
+                        <div>
+                            <p class="mcc-role">Course lead</p>
+                            <h3>PJ McCloskey</h3>
+                            <p class="mcc-title">Director, MCC Economics</p>
+                        </div>
+                    </div>
+                    <p class="mcc-instructor-bio">PJ has worked on price controls from the regulator's side and for
+                        regulated companies, including RIIO-2 work with Ofgem and the Utility Regulator for Northern
+                        Ireland.</p>
+                    <ul class="mcc-cred">
+                        <li>ACMA chartered management accountant</li>
+                        <li>MSc Finance (Distinction), Birkbeck</li>
+                        <li>Specialist in cost of capital and financial modelling</li>
+                    </ul>
+                    <p class="mcc-links"><a href="https://www.mcceconomics.co.uk/team/pj-mccloskey">Full profile and
+                            publications</a><a href="https://www.linkedin.com/in/pj-mcceconomics-consultant/"
+                            target="_blank" rel="noopener">LinkedIn</a></p>
+                </article>
+            </div>
+            <figure class="mcc-team-testimonial">
+                <blockquote>
+                    <p>I heartily recommend PJ to anyone seeking input on the financial parameters that underpin
+                        different regulatory models.</p>
+                </blockquote>
+                <figcaption>James Veaney, Deputy Director, Electricity Sector Price Controls, Ofgem</figcaption>
+            </figure>
+        </div>
+    </section>
+    <div class="mcc-body">
+        <main class="mcc-main">
+            <section class="mcc-qa" aria-labelledby="mcc-qa-h">
+                <h2 id="mcc-qa-h">Quick Answer</h2>
+                <p>Price Controls 231 explains how Oman Electricity Transmission Company earns its regulated revenue.
+                    You learn how the Authority for Public Services Regulation (APSR) sets Maximum Allowed Revenue from
+                    operating costs, capital costs and the weighted average cost of capital, how it assesses grid
+                    investment for efficiency, and how incentives apply to spinning reserve.</p>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-kt">
+                <h2 id="mcc-kt">Key takeaways</h2>
+                <ul class="mcc-kts">
+                    <li>OETC is the sole licensed transmission and dispatch operator in Oman, so regulation, not
+                        competition, sets its revenue.</li>
+                    <li>Maximum Allowed Revenue is built from operating costs, capital costs and a return set by the
+                        weighted average cost of capital.</li>
+                    <li>APSR assesses strategic grid investment for prudence and efficiency.</li>
+                    <li>Performance incentives apply to spinning reserve and system reliability.</li>
+                </ul>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-learn">
+                <h2 id="mcc-learn">What will you be able to do after the course?</h2>
+                <p>You will be able to read an OETC price control and explain where each part of the allowed revenue
+                    comes from. The course is built around three outcomes.</p>
+                <ul class="mcc-outs">
+                    <li><strong>Explain the governance.</strong> How OETC is licensed and regulated under Oman's Sector
+                        Law.</li>
+                    <li><strong>Break down the revenue.</strong> How Maximum Allowed Revenue is calculated from capital
+                        costs, operating costs and the cost of capital.</li>
+                    <li><strong>Judge the incentives.</strong> How spinning reserve incentives work, and where
+                        regulation is heading on digitalisation, resilience and performance metrics.</li>
+                </ul>
+            </section>
+
+            <section class="mcc-sec" id="mcc-outline" aria-labelledby="mcc-cov">
+                <h2 id="mcc-cov">What does the course cover?</h2>
+                <p>The lecture starts with OETC's place in Oman's electricity sector and then works through how its
+                    revenue is regulated.</p>
+                <ol class="mcc-agenda">
+                    <li><span>Introduction</span></li>
+                    <li><span>OETC in the electricity value chain: the Main Interconnected System</span></li>
+                    <li><span>OETC in the electricity value chain: the Dhofar Power System</span></li>
+                    <li><span>Maximum Allowed Revenue and its building blocks</span></li>
+                    <li><span>How APSR assesses grid investment</span></li>
+                    <li><span>Spinning reserve incentives and the direction of future regulation</span></li>
+                </ol>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-terms">
+                <h2 id="mcc-terms">What do the key terms mean?</h2>
+                <p>These are the terms the course uses most, in plain English.</p>
+                <div class="mcc-tw">
+                    <table class="mcc-tb">
+                        <thead>
+                            <tr>
+                                <th scope="col">Term</th>
+                                <th scope="col">Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope='row'>OETC</th>
+                                <td>Oman Electricity Transmission Company, the sole licensed transmission and dispatch
+                                    operator in Oman.</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>APSR</th>
+                                <td>Authority for Public Services Regulation, the body that regulates Oman's electricity
+                                    sector and sets OETC's price control.</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Maximum Allowed Revenue</th>
+                                <td>The revenue OETC is allowed to recover under its price control, abbreviated to MAR.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Building blocks</th>
+                                <td>The method of adding up efficient operating costs, capital costs and a return on
+                                    capital to reach allowed revenue.</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>WACC</th>
+                                <td>Weighted average cost of capital: the blended return that debt and equity investors
+                                    require, used to set the return block.</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>RPI-X</th>
+                                <td>A price control that lets revenue rise with retail price inflation minus an
+                                    efficiency factor, X.</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Spinning reserve</th>
+                                <td>Generating capacity that is running and synchronised to the grid, ready to respond
+                                    quickly if supply is lost.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-who">
+                <h2 id="mcc-who">Who is the course for?</h2>
+                <p>It suits people who work with transmission pricing or utility regulation and want a worked example
+                    from the Gulf.</p>
+                <ul class="mcc-chips">
+                    <li>Regulatory professionals and grid operators</li>
+                    <li>Economists and engineers in transmission pricing</li>
+                    <li>Infrastructure consultants in emerging markets</li>
+                    <li>Students of energy systems and economic regulation</li>
+                </ul>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-path">
+                <h2 id="mcc-path">Which courses should you take first?</h2>
+                <p>If revenue caps, building blocks or the cost of capital are new to you, start earlier in the Price
+                    Controls series. Price Controls 230 covers Oman's price controls more broadly.</p>
+                <ol class="mcc-path">
+                    <li><a href="https://www.eventbrite.com/e/price-controls-101-price-and-revenue-caps-on-demand-course-material-tickets-1468957725099"
+                            target="_blank" rel="noopener"><b>101</b><span>Price and revenue caps</span></a></li>
+                    <li><a href="https://www.eventbrite.com/e/price-controls-120-building-blocks-on-demand-course-material-tickets-1469116469909"
+                            target="_blank" rel="noopener"><b>120</b><span>Building blocks</span></a></li>
+                    <li><a href="https://www.eventbrite.com/e/price-controls-130-cost-of-capital-on-demand-course-material-tickets-1471956825489"
+                            target="_blank" rel="noopener"><b>130</b><span>Cost of capital</span></a></li>
+                    <li><a href="https://www.eventbrite.com/e/price-controls-160-incentive-mechanisms-on-demand-course-material-tickets-1502434474959"
+                            target="_blank" rel="noopener"><b>160</b><span>Incentive mechanisms</span></a></li>
+                    <li><a href="https://www.eventbrite.co.uk/e/price-controls-230-oman-price-controls-on-demand-course-material-tickets-1962498576070"
+                            target="_blank" rel="noopener"><b>230</b><span>Oman price controls</span></a></li>
+                    <li class="mcc-here" aria-current="step"><b>231</b><span>OETC, this course</span></li>
+                </ol>
+                <p class="mcc-small">Browse every title on the <a href="https://www.mcceconomics.co.uk/courses">MCC
+                        Economics courses page</a>.</p>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-why">
+                <h2 id="mcc-why">Why learn this from MCC Economics?</h2>
+                <p>MCC Economics advises regulators, government bodies and utilities on price controls, and its Gulf
+                    work includes the United Arab Emirates and Oman. The firm was founded in London in 2017. Its <a
+                        href="https://www.mcceconomics.co.uk/services/regulatory-economics">regulatory economics</a>
+                    work covers energy, water, aviation and infrastructure. You can read the team's background on the <a
+                        href="https://www.mcceconomics.co.uk/people">people page</a>.</p>
+                <figure class="mcc-quote">
+                    <blockquote>
+                        <p>MCC Economics has helped us better understand the most important issues for our stakeholders,
+                            including: charges, shareholder returns, debt payments and inflation impacts.</p>
+                    </blockquote>
+                    <figcaption>Leila N. Nasr, Section Head, Department of Energy, Abu Dhabi</figcaption>
+                </figure>
+            </section>
+
+            <section class="mcc-sec" aria-labelledby="mcc-faq">
+                <h2 id="mcc-faq">Questions buyers ask before registering</h2>
+                <div class="mcc-faqs">
+                    <div class='mcc-fq'>
+                        <h3>Who teaches Price Controls 231?</h3>
+                        <p>See the course instructor profiles above for the current teaching team and their experience.
+                        </p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>Is there a live session?</h3>
+                        <p>No. Price Controls 231 is recorded course material, so there is no meeting to attend. You get
+                            access to the materials as soon as you register.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>How long does the course take?</h3>
+                        <p>The lecture runs for about 30 minutes. Allow a little longer if you want to work through the
+                            slides and the quiz.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>What do I receive when I register?</h3>
+                        <p>A video lecture, the presentation slides, a full transcript and a short quiz to check your
+                            understanding.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>Where do I pay?</h3>
+                        <p>Checkout is handled by Eventbrite, where MCC Economics and Finance is the organiser. The
+                            button on this page takes you straight to the course listing.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>Can I get a refund?</h3>
+                        <p>No. The Eventbrite listing for this course states a no refunds policy, so check the course
+                            outline on this page before you buy.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>Do I need prior knowledge of price controls?</h3>
+                        <p>It helps. Price Controls 231 is an advanced case study. If revenue caps, building blocks or
+                            the cost of capital are new to you, take Price Controls 101, 120 and 130 first.</p>
+                    </div>
+                    <div class='mcc-fq'>
+                        <h3>Can my team take the course together?</h3>
+                        <p>Contact MCC Economics through the <a
+                                href="https://www.mcceconomics.co.uk/book-consultation">consultation page</a> to discuss
+                            access for a team or training tailored to your organisation.</p>
+                    </div>
+                </div>
+                <p class="mcc-small">Page last reviewed September 2026.</p>
+            </section>
+        </main>
+
+        <aside class="mcc-buy" aria-label="Buy this course">
+            <p class="mcc-buy-t">Price Controls 231: OETC</p>
+            <p class="mcc-buy-p">Meet the course instructors below. Price confirmed at checkout.</p>
+            <button id="eb-sidebar-btn" class="mcc-btn mcc-wide" type="button" style="font-family:inherit;cursor:pointer">Check availability</button>
+            <p class="mcc-buy-n">Opens the Eventbrite checkout overlay.</p>
+            <ul class="mcc-inc">
+                <li>Video lecture, about 30 minutes</li>
+                <li>Presentation slides</li>
+                <li>Full transcript</li>
+                <li>Quiz to check understanding</li>
+                <li>Immediate access after registering</li>
+            </ul>
+            <p class="mcc-buy-r">No refunds, as stated on the Eventbrite listing. Buying for a team? <a
+                    href="https://www.mcceconomics.co.uk/book-consultation">Contact MCC Economics</a>.</p>
+        </aside>
+    </div>
+</div>
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+<script>
+(function(){
+  var EB_EVENT_ID='1972324570885';
+  function initEB(){
+    if(!window.EBWidgets)return;
+    window.EBWidgets.createWidget({widgetType:'checkout',eventId:EB_EVENT_ID,modal:true,modalTriggerElementId:'eb-hero-btn'});
+    window.EBWidgets.createWidget({widgetType:'checkout',eventId:EB_EVENT_ID,modal:true,modalTriggerElementId:'eb-sidebar-btn'});
+  }
+  if(window.EBWidgets){initEB()}else{document.querySelector('script[src*="eb_widgets"]').addEventListener('load',initEB)}
+}());
+</script>
